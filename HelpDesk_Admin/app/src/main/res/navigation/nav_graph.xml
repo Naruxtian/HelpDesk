@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.utl.helpdesk_admin.View.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_employeesFragment"
+            app:destination="@id/employeesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_ticketsFragment"
+            app:destination="@id/ticketsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeesFragment"
+        android:name="org.utl.helpdesk_admin.View.EmployeesFragment"
+        android:label="fragment_employees"
+        tools:layout="@layout/fragment_employees" >
+        <action
+            android:id="@+id/action_employeesFragment_to_ticketsFragment"
+            app:destination="@id/ticketsFragment" />
+        <action
+            android:id="@+id/action_employeesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketsFragment"
+        android:name="org.utl.helpdesk_admin.View.TicketsFragment"
+        android:label="fragment_tickets"
+        tools:layout="@layout/fragment_tickets" >
+        <action
+            android:id="@+id/action_ticketsFragment_to_employeesFragment2"
+            app:destination="@id/employeesFragment" />
+        <action
+            android:id="@+id/action_ticketsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
